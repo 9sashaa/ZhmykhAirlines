@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.ac.sce.project_aleksandrkisliak.controller.AddNewFlightController">
+   <children>
+      <Label layoutX="30.0" layoutY="20.0" text="Zhmykh" textFill="#605dec">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="logOutButton" alignment="CENTER" contentDisplay="CENTER" layoutX="1120.0" layoutY="32.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="75.0" style="-fx-background-color: dc3545;" text="Log out" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Circle fill="#605dec" layoutX="985.0" layoutY="50.0" radius="20.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Button fx:id="authFirstname" layoutX="1000.0" layoutY="32.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Title" textFill="#605dec">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="depCountry" layoutX="51.0" layoutY="130.0" prefHeight="40.0" prefWidth="250.0" promptText="Departure Country">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <Label layoutX="305.0" layoutY="135.0" text="---&gt;" textFill="#605dec">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="destCountry" layoutX="355.0" layoutY="130.0" prefHeight="40.0" prefWidth="250.0" promptText="Destination Country">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <DatePicker fx:id="depDate" layoutX="50.0" layoutY="190.0" prefHeight="40.0" prefWidth="250.0" promptText="Departure Date" />
+      <DatePicker fx:id="arrDate" layoutX="355.0" layoutY="190.0" prefHeight="40.0" prefWidth="250.0" promptText="Arrival Date" />
+      <TextField fx:id="depTime" layoutX="50.0" layoutY="250.0" prefHeight="40.0" prefWidth="250.0" promptText="Dep. Time (hh:mm)">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <TextField fx:id="arrTime" layoutX="355.0" layoutY="250.0" prefHeight="40.0" prefWidth="250.0" promptText="Arr. Time (hh:mm)">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <TextField fx:id="duration" layoutX="620.0" layoutY="250.0" prefHeight="40.0" prefWidth="170.0" promptText="Duration (hh:mm)">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <MenuButton fx:id="airplaneMenu" layoutX="50.0" layoutY="310.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" text="Airplane" />
+      <Label layoutX="305.0" layoutY="195.0" text="---&gt;" textFill="#605dec">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="totalSeats" disable="true" layoutX="355.0" layoutY="310.0" prefHeight="40.0" prefWidth="250.0" promptText="Total Seats">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <Label layoutX="305.0" layoutY="255.0" text="---&gt;" textFill="#605dec">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="price" layoutX="50.0" layoutY="370.0" prefHeight="40.0" prefWidth="250.0" promptText="Price">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <Button fx:id="submitButton" layoutX="400.0" layoutY="500.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #605DEC;" text="Submit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Text fx:id="maxCapacityText" fill="#7c8db0" layoutX="355.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max capacity: " visible="false" />
+      <Text fx:id="errorText" fill="#dc3545" layoutX="350.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

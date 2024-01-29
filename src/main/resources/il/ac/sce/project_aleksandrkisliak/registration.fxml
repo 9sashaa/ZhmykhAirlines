@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.ac.sce.project_aleksandrkisliak.controller.RegistrationController">
+    <children>
+      <TextField fx:id="regFirstnameInput" layoutX="200.0" layoutY="160.0" prefHeight="60.0" prefWidth="400.0" promptText="First name*">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="regLastnameInput" layoutX="600.0" layoutY="160.0" prefHeight="60.0" prefWidth="400.0" promptText="Last name*">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </TextField>
+        <TextField fx:id="regUsernameInput" layoutX="200.0" layoutY="260.0" prefHeight="60.0" prefWidth="800.0" promptText="Username*">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </TextField>
+      <TextField fx:id="regPhonenumberInput" layoutX="200.0" layoutY="360.0" prefHeight="60.0" prefWidth="800.0" promptText="Phone number*">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </TextField>
+        <PasswordField fx:id="regPasswordInput" layoutX="200.0" layoutY="460.0" prefHeight="60.0" prefWidth="800.0" promptText="Password*">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </PasswordField>
+        <Button fx:id="regSubmitButton" layoutX="400.0" layoutY="560.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="400.0" style="-fx-background-color: #605DEC;" text="Submit" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="regSignInButton" layoutX="1085.0" layoutY="30.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="95.0" style="-fx-background-color: #605dec;" text="Sign in" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Label alignment="CENTER" layoutX="100.0" layoutY="60.0" prefHeight="89.0" prefWidth="1000.0" text="Welcome to Zhmykh Airlines!" textFill="#605dec">
+            <font>
+                <Font size="72.0" />
+            </font>
+        </Label>
+      <Label fx:id="errorText" layoutX="480.0" layoutY="650.0" text="All fields must be filled in!" textFill="#dc3545" visible="false">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
