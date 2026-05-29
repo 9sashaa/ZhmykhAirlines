@@ -1,89 +1,89 @@
 # Zhmykh Airlines
 
-Десктопное приложение для бронирования авиабилетов, написанное на JavaFX. Пользователь регистрируется, ищет рейсы по направлению и дате, выбирает места в самолёте, покупает и оплачивает билеты, а также управляет личным кабинетом и своими билетами. Предусмотрен сценарий добавления новых рейсов.
+A desktop flight-booking application written in JavaFX. Users register, search for flights by route and date, choose seats on the aircraft, buy and pay for tickets, and manage their personal account and their tickets. A flow for adding new flights is also provided.
 
-## Описание проекта
+## Project Description
 
-Приложение реализует полный пользовательский путь авиакомпании в виде настольной программы с графическим интерфейсом:
+The application implements a complete airline user journey as a desktop program with a graphical interface:
 
-- **Регистрация и вход** — создание учётной записи и авторизация пользователя.
-- **Поиск рейсов** — выбор пункта отправления, назначения и даты вылета.
-- **Просмотр рейсов** — список всех доступных рейсов с информацией о самолёте.
-- **Выбор мест** — интерактивный выбор свободных мест в салоне выбранного рейса.
-- **Покупка и оплата билетов** — оформление выбранных мест и оплата.
-- **Личный кабинет** — управление данными профиля.
-- **Мои билеты** — просмотр и управление приобретёнными билетами.
-- **Добавление рейса** — создание новых рейсов в системе.
+- **Registration and sign-in** — create an account and authenticate the user.
+- **Flight search** — choose the departure point, destination, and departure date.
+- **Flight listing** — a list of all available flights with aircraft information.
+- **Seat selection** — interactive selection of available seats in the cabin of the chosen flight.
+- **Ticket purchase and payment** — book the selected seats and pay.
+- **Personal account** — manage profile data.
+- **My tickets** — view and manage purchased tickets.
+- **Add a flight** — create new flights in the system.
 
-Приложение построено по архитектуре **MVC**: интерфейс описан в FXML-разметке, логика экранов вынесена в контроллеры, доменные сущности — в модели, а доступ к данным инкапсулирован в слое работы с базой данных MySQL. Глобальное состояние сессии (авторизация, текущий пользователь, найденные рейсы, выбранные места) хранится в классе `MainState`.
+The application follows the **MVC** architecture: the interface is described in FXML markup, screen logic lives in controllers, domain entities are in models, and data access is encapsulated in a layer that works with a MySQL database. The global session state (authentication, current user, found flights, selected seats) is stored in the `MainState` class.
 
-## Технологии
+## Technologies
 
 - **Java 21**
-- **JavaFX 21** (`javafx-controls`, `javafx-fxml`) — графический интерфейс и FXML-разметка
-- **Maven** — сборка проекта (включён Maven Wrapper `mvnw`)
-- **MySQL** — хранение данных, доступ через JDBC
-- **JUnit 5** — модульное тестирование
-- Архитектура **MVC** (модель — представление — контроллер)
+- **JavaFX 21** (`javafx-controls`, `javafx-fxml`) — graphical interface and FXML markup
+- **Maven** — project build (Maven Wrapper `mvnw` included)
+- **MySQL** — data storage, accessed via JDBC
+- **JUnit 5** — unit testing
+- **MVC** architecture (Model — View — Controller)
 
-## Установка
+## Installation
 
-Необходимое окружение:
+Required environment:
 
 - JDK 21
-- Maven (или используйте включённый в проект `mvnw` / `mvnw.cmd`)
-- Сервер MySQL
+- Maven (or use the bundled `mvnw` / `mvnw.cmd`)
+- A MySQL server
 
-Шаги:
+Steps:
 
 ```bash
-# 1. Клонировать репозиторий
+# 1. Clone the repository
 git clone https://github.com/9sashaa/ZhmykhAirlines.git
 cd ZhmykhAirlines
 
-# 2. Создать базу данных в MySQL (по умолчанию ожидается имя ZhmykhAirlines)
+# 2. Create a database in MySQL (the name ZhmykhAirlines is expected by default)
 ```
 
-Настройте параметры подключения к базе данных в файле
+Configure the database connection parameters in
 `src/main/java/il/ac/sce/project_aleksandrkisliak/Database/Config.java`:
 
 ```java
 protected String dbHost = "localhost";
 protected String dbPort = "3306";
-protected String dbUser = "<ваш_пользователь>";
-protected String dbPass = "<ваш_пароль>";
+protected String dbUser = "<your_user>";
+protected String dbPass = "<your_password>";
 protected String dbName = "ZhmykhAirlines";
 ```
 
-> **Рекомендация по безопасности:** учётные данные базы данных лучше выносить из исходного кода в переменные окружения или внешний конфигурационный файл, не попадающий в систему контроля версий.
+> **Security recommendation:** database credentials should be moved out of the source code into environment variables or an external configuration file that is not committed to version control.
 
-## Использование
+## Usage
 
-Запуск приложения через плагин JavaFX:
+Run the application via the JavaFX plugin:
 
 ```bash
-# С использованием Maven Wrapper
+# Using the Maven Wrapper
 ./mvnw clean javafx:run
 
-# либо при установленном Maven
+# or with Maven installed
 mvn clean javafx:run
 ```
 
-После запуска открывается окно «Zhmykh airlines!». Дальнейший сценарий: зарегистрироваться или войти, задать параметры поиска рейса, выбрать рейс и места, оформить и оплатить билет.
+On startup, the "Zhmykh airlines!" window opens. The typical flow: register or sign in, set the flight search parameters, choose a flight and seats, then book and pay for the ticket.
 
-## Структура проекта
+## Project Structure
 
 ```
 ZhmykhAirlines/
-├── pom.xml                        # Конфигурация Maven и зависимостей
+├── pom.xml                        # Maven and dependency configuration
 ├── mvnw, mvnw.cmd, .mvn/          # Maven Wrapper
 └── src/main/
     ├── java/
-    │   ├── module-info.java       # Описание Java-модуля
+    │   ├── module-info.java       # Java module descriptor
     │   └── il/ac/sce/project_aleksandrkisliak/
-    │       ├── MainApp.java        # Точка входа JavaFX-приложения
-    │       ├── MainState.java      # Глобальное состояние сессии
-    │       ├── controller/         # Контроллеры экранов
+    │       ├── MainApp.java        # JavaFX application entry point
+    │       ├── MainState.java      # Global session state
+    │       ├── controller/         # Screen controllers
     │       │   ├── LoginController.java
     │       │   ├── RegistrationController.java
     │       │   ├── MainPageController.java
@@ -94,17 +94,17 @@ ZhmykhAirlines/
     │       │   ├── PersonalAccountPageController.java
     │       │   ├── AddNewFlightController.java
     │       │   └── Assets.java
-    │       ├── model/              # Доменные модели
+    │       ├── model/              # Domain models
     │       │   ├── User.java
     │       │   ├── Flight.java
     │       │   ├── Airplane.java
     │       │   ├── Ticket.java
     │       │   ├── FlightWithModel.java
     │       │   └── FlightWithTicket.java
-    │       ├── Database/           # Работа с MySQL
-    │       │   ├── Config.java         # Параметры подключения
-    │       │   ├── Const.java          # SQL-константы
-    │       │   └── DatabaseHandler.java# Запросы к базе данных
-    │       └── assets/             # Ресурсы приложения
-    └── resources/                  # FXML-разметка и стили интерфейса
+    │       ├── Database/           # MySQL access
+    │       │   ├── Config.java          # Connection parameters
+    │       │   ├── Const.java           # SQL constants
+    │       │   └── DatabaseHandler.java # Database queries
+    │       └── assets/             # Application resources
+    └── resources/                  # FXML markup and interface styles
 ```
